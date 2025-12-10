@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FPL Optimizer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-color: #DADAD3;
+        color: #1D1D1B;
+        font-family: 'Roboto', sans-serif;
+        background-image: radial-gradient(#1D1D1B 1px, transparent 1px);
+        background-size: 20px 20px;
+        overflow-x: hidden;
+      }
+      
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #DADAD3; 
+        border-left: 2px solid #1D1D1B;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #C1C1BF; 
+        border: 2px solid #1D1D1B;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #A0A09E;
+      }
+
+      /* Scanline Effect */
+      .scanlines::before {
+        content: " ";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+        z-index: 99999;
+        background-size: 100% 2px, 3px 100%;
+        pointer-events: none;
+      }
+      
+      .retro-shadow {
+        box-shadow: -0.6rem 0.6rem 0 rgba(29, 30, 28, 0.26);
+      }
+      
+      .retro-text-shadow {
+         text-shadow: 2px 2px 0px rgba(29, 30, 28, 0.1);
+      }
+
+      @keyframes shine {
+        0% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.10.1",
+    "axios": "https://aistudiocdn.com/axios@^1.13.2",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^11.13.1"
+  }
+}
+</script>
+</head>
+  <body class="scanlines">
+    <div id="root"></div>
+  </body>
+</html>
